@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.6 on win32)" generated="2024-12-13T13:08:36.804369" rpa="false" schemaversion="5">
+<suite id="s1" name="Flames" source="D:\Flames Test\Tests\flames.robot">
+<kw name="Suite Setup" owner="kw_flames" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-13T13:08:37.400166" level="INFO">Opening browser 'Chrome' to base url 'https://www.mymathtables.com/calculator/fun/F-L-A-M-E-S-calculator.html'.</msg>
+<arg>https://www.mymathtables.com/calculator/fun/F-L-A-M-E-S-calculator.html</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-13T13:08:37.400166" elapsed="6.892878"/>
+</kw>
+<doc>Open The Website in Chrome</doc>
+<status status="PASS" start="2024-12-13T13:08:37.400166" elapsed="6.892878"/>
+</kw>
+<test id="s1-t1" name="Longer First Name" line="11">
+<kw name="Test Setup" owner="kw_flames" type="SETUP">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpaths}[name1]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-13T13:08:44.293044" elapsed="0.112336"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpaths}[name2]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-13T13:08:44.405380" elapsed="0.049484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-13T13:08:44.454864" level="INFO">Clicking element '//input[@onclick='calculate1();']'.</msg>
+<arg>${xpaths}[calculate_button]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-13T13:08:44.454864" elapsed="0.135217"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-12-13T13:08:44.590081" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Enter Your and Your Partner Name</arg>
+<arg>ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-12-13T13:08:44.590081" elapsed="0.010980"/>
+</kw>
+<doc>Clear the input fields and verify if they are cleared</doc>
+<status status="PASS" start="2024-12-13T13:08:44.293044" elapsed="0.310221"/>
+</kw>
+<kw name="Calculate Code Result" owner="kw_flames">
+<kw name="Find Code Relation">
+<msg time="2024-12-13T13:08:44.606611" level="FAIL">No keyword with name 'Find Code Relation' found.</msg>
+<var>${code_result}</var>
+<arg>${name1}</arg>
+<arg>${name2}</arg>
+<status status="FAIL" start="2024-12-13T13:08:44.606611" elapsed="0.000000">No keyword with name 'Find Code Relation' found.</status>
+</kw>
+<return>
+<value>${code_result}</value>
+<status status="NOT RUN" start="2024-12-13T13:08:44.606611" elapsed="0.000000"/>
+</return>
+<var>${code_result}</var>
+<arg>Nachiket</arg>
+<arg>Aditi</arg>
+<doc>Calculates the flames result using python code</doc>
+<status status="FAIL" start="2024-12-13T13:08:44.604094" elapsed="0.002517">No keyword with name 'Find Code Relation' found.</status>
+</kw>
+<kw name="Calculate Web Result" owner="kw_flames">
+<var>${web_result}</var>
+<arg>Nachiket</arg>
+<arg>Aditi</arg>
+<doc>Calculates the flames result using website</doc>
+<status status="NOT RUN" start="2024-12-13T13:08:44.606611" elapsed="0.000000"/>
+</kw>
+<kw name="Assert Results" owner="kw_flames">
+<arg>${code_result}</arg>
+<arg>${web_result}</arg>
+<doc>Compare the results and pass if same</doc>
+<status status="NOT RUN" start="2024-12-13T13:08:44.606611" elapsed="0.000000"/>
+</kw>
+<doc>Test with the name1 longer than name2</doc>
+<status status="FAIL" start="2024-12-13T13:08:44.293044" elapsed="0.313567">No keyword with name 'Find Code Relation' found.</status>
+</test>
+<kw name="Suite Teardown" owner="kw_flames" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-13T13:08:44.606611" elapsed="2.242560"/>
+</kw>
+<doc>Close the Browser</doc>
+<status status="PASS" start="2024-12-13T13:08:44.606611" elapsed="2.242560"/>
+</kw>
+<doc>Tests for Flames</doc>
+<status status="FAIL" start="2024-12-13T13:08:36.804369" elapsed="10.044802"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Flames">Flames</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-13T13:08:37.384562" level="ERROR">Error in file 'D:\Flames Test\Resources\kw_flames.resource' on line 5: Importing library 'FlamesLibrary' failed: ModuleNotFoundError: No module named 'FlamesLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312
+  C:\Users\Nachiket Jamadar\AppData\Local\Programs\Python\Python312\Lib\site-packages</msg>
+</errors>
+</robot>
